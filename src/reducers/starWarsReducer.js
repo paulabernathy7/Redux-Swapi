@@ -11,12 +11,27 @@ const initialState = {
 };
 
 //after writing out each case go to mapstate to props and add the new state
+// when using an array see below. spread in your state.array and spread in your action.payload
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CHARACTERS:
       return {
         ...state,
         fetching: true
+      };
+    case FETCH_SUCCESS:
+      console.log(action.payload);
+      return {
+        ...state,
+        characters: [...state.characters, ...action.payload],
+        fetching: false
+      };
+
+    case FETCH_FAILURE:
+      return {
+        ...state,
+        fetching: false,
+        error: action.payload
       };
     // Fill me in with the important reducers
     // action types should be FETCHING, SUCCESS and FAILURE

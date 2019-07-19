@@ -12,9 +12,11 @@ import rootReducer from "./reducers";
 // thunk from redux-thunk
 // logger from redux-logger
 // rootReducer from ./reducers
+//after creating your store move over to your reducers
 
 const store = createStore(
-  rootReducer
+  rootReducer,
+  applyMiddleware(thunk, logger)
   /* applyMiddleware goes here */
 );
 

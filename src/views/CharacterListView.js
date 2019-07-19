@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { getAPI } from "../actions";
 
 import { CharacterList } from "../components";
 // import actions
@@ -10,6 +11,7 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
+    this.props.getAPI();
     // call our action
   }
 

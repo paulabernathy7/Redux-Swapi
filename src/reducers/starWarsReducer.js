@@ -9,6 +9,8 @@ const initialState = {
   error: null
   // Array characters, Boolean fetching, null error.
 };
+
+//after writing out each case go to mapstate to props and add the new state
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CHARACTERS:
